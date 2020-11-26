@@ -3,7 +3,7 @@
 Here is a class called Storage that allows loading and saving json files, text-plain and data.
 
 But you can add the StorageManager in your scene to access to that class.
-You can turn TRUE the "blocker" property in this Node to specify that in case of error an message should be displayed and the game ended.
+You can turn TRUE the "blocker" property in this Node to specify that in case of error a message should be displayed and the game ended.
 
 ### Example code (Load Encrypted Data)
 
