@@ -7,35 +7,43 @@ You can turn TRUE the "blocker" property in this Node to specify that in case of
 
 ### Example code (Load Encrypted Data)
 
-> var storage : Storage = Storage.new("user://settings.data", "ENCRYPT_PASSWORD")
-> var data = storage.load_data()
-> if data.result == OK:
->	AudioServer.set_bus_volume_db(0, linear2db(data.data.volume))
->	OS.vsync_enabled = data.data.vsync
-> else:
-> 	AudioServer.set_bus_volume_db(0, linear2db(.8))
->	OS.vsync_enabled = true
+```gdscript
+var storage : Storage = Storage.new("user://settings.data", "ENCRYPT_PASSWORD")
+var data = storage.load_data()
+if data.result == OK:
+	AudioServer.set_bus_volume_db(0, linear2db(data.data.volume))
+	OS.vsync_enabled = data.data.vsync
+else:
+ 	AudioServer.set_bus_volume_db(0, linear2db(.8))
+	OS.vsync_enabled = true
+```
 
 ### Example code (Store Encrypted Data)
 
-> var storage : Storage = Storage.new("user://settings.data", "ENCRYPT_PASSWORD")
-> var result = storage.store_data({ "xxx": "yyy" })
-> if result != OK: print("Error")
+```gdscript
+var storage : Storage = Storage.new("user://settings.data", "ENCRYPT_PASSWORD")
+var result = storage.store_data({ "xxx": "yyy" })
+if result != OK: print("Error")
+```
 
 ### Example code (Load JSON)
 
-> var storage : Storage = Storage.new("res://file.json")
-> var data = storage.load_json()
-> if data.result == OK:
->	print(data)
-> else:
->	print("ERROR")
+```gdscript
+var storage : Storage = Storage.new("res://file.json")
+var data = storage.load_json()
+if data.result == OK:
+	print(data)
+else:
+	print("ERROR")
+```
 
 ### Example code (Store Encrypted Data)
 
-> var storage : Storage = Storage.new("user://settings.data")
-> var result = storage.store_json({ "xxx": "yyy" })
-> if result != OK: print("Error")
+```gdscript
+var storage : Storage = Storage.new("user://settings.data")
+var result = storage.store_json({ "xxx": "yyy" })
+if result != OK: print("Error")
+```
 
 ### Thats all!
 If you are felling it, please leave a donation!
